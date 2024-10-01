@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            background: #121212;
+            background-image: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(0, 0, 0, 0.7)), url('TAH APA.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            padding: 40px;
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .profile-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .profile-links a {
+            display: inline-block;
+            padding: 12px 20px;
+            color: #fff;
+            background: rgba(31, 31, 31, 0.9);
+            text-decoration: none;
+            border-radius: 30px;
+            position: relative;
+            transition: 0.4s ease;
+            font-size: 0.95em;
+            letter-spacing: 1px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-links a:hover {
+            background: #3a73f5;
+            color: #fff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(58, 115, 245, 0.5);
+        }
+
+        .profile-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            transform: scale(0);
+            transition: transform 0.6s ease;
+            z-index: -1;
+        }
+
+        .profile-links a:hover::before {
+            transform: scale(1);
+        }
+
+        .profile-links a i {
+            margin-right: 8px;
+        }
+
+        /* Prank content */
+        .prank-content {
+            display: none;
+            margin-top: 20px;
+            color: #ff3366;
+            font-size: 1.2em;
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* Animasi PRANK besar */
+        .prank-big {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 6em;
+            color: #ff0000;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-shadow: 0px 0px 30px rgba(255, 0, 0, 0.8);
+            animation: shockwave 1.5s ease forwards;
+        }
+
+        @keyframes shockwave {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: translate(-50%, -50%) scale(1.2);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Footer */
+        footer {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.8em;
+            margin-top: 20px;
+        }
+
+        footer a {
+            color: #3a73f5;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .card {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .profile-links a {
+                padding: 10px 15px;
+                font-size: 0.85em;
+            }
+
+            .prank-big {
+                font-size: 4em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>halooo!</h1>
+
+        <!-- Social media profile buttons -->
+        <div class="profile-links">
+            <a href="https://www.instagram.com/gilbert_smrt" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+
+            <a href="https://wa.me/+6283100217608" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+
+            <a href="https://t.me/glsmrtid" target="_blank">
+                <i class="fab fa-telegram"></i> Telegram
+            </a>
+
+            <a href="https://www.facebook.com/Gilbert Smrt" target="_blank">
+                <i class="fab fa-facebook"></i> Facebook
+            </a>
+
+            <a href="https://ngl.link/gilbert_smrt1" target="_blank">
+                <i class="fas fa-question-circle"></i> NGL
+            </a>
+
+            <!-- Prank button -->
+            <a href="#" id="prankBtn">
+                <i class="fas fa-bomb"></i> Gift for You
+            </a>
+        </div>
+
+        <!-- Prank content -->
+        <div class="prank-content" id="prankContent">
+            <p>yaaa hahaa prankk! 🎉</p>
+            <img src="prank.jpg" alt="Prank Image" style="width:100%; max-width:200px; margin-top:10px;">
+        </div>
+
+        <!-- Big PRANK animation -->
+        <div class="prank-big" id="prankBig">PRANK!</div>
+
+        <footer>
+            &copy; 2024 Gilbert Simarmata. All rights reserved. <a href="#">Your Website</a>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('prankBtn').addEventListener('click', function() {
+            var prankContent = document.getElementById('prankContent');
+            var prankBig = document.getElementById('prankBig');
+            prankContent.style.display = 'block'; // Show the prank content
+            prankBig.style.display = 'block'; // Show the big PRANK text
+
+            // Hide the big PRANK text after animation ends
+            setTimeout(function() {
+                prankBig.style.display = 'none';
+            }, 1500);
+        });
+    </script>
+
+</body>
+</html>
